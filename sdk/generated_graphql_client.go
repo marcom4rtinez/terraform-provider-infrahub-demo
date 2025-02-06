@@ -3261,22 +3261,22 @@ func (v *IPAddressPoolInput) GetPrefixlen() int { return v.Prefixlen }
 type InfraDeviceCreateInput struct {
 	Id                   string                    `json:"id"`
 	Role                 TextAttributeCreate       `json:"role"`
-	Description          TextAttributeCreate       `json:"description"`
 	Contract             TextAttributeCreate       `json:"contract"`
 	Name                 TextAttributeCreate       `json:"name"`
 	Status               TextAttributeCreate       `json:"status"`
+	Description          TextAttributeCreate       `json:"description"`
 	Subscriber_of_groups []RelatedNodeInput        `json:"subscriber_of_groups"`
 	Artifacts            []RelatedNodeInput        `json:"artifacts"`
 	Member_of_groups     []RelatedNodeInput        `json:"member_of_groups"`
-	Interfaces           []RelatedNodeInput        `json:"interfaces"`
-	Platform             RelatedNodeInput          `json:"platform"`
-	Primary_address      RelatedIPAddressNodeInput `json:"primary_address"`
-	Asn                  RelatedNodeInput          `json:"asn"`
 	Profiles             []RelatedNodeInput        `json:"profiles"`
-	Topology             RelatedNodeInput          `json:"topology"`
-	Tags                 []RelatedNodeInput        `json:"tags"`
+	Asn                  RelatedNodeInput          `json:"asn"`
 	Location             RelatedNodeInput          `json:"location"`
+	Primary_address      RelatedIPAddressNodeInput `json:"primary_address"`
+	Tags                 []RelatedNodeInput        `json:"tags"`
+	Interfaces           []RelatedNodeInput        `json:"interfaces"`
 	Device_type          RelatedNodeInput          `json:"device_type"`
+	Platform             RelatedNodeInput          `json:"platform"`
+	Topology             RelatedNodeInput          `json:"topology"`
 }
 
 // GetId returns InfraDeviceCreateInput.Id, and is useful for accessing the field via an interface.
@@ -3284,9 +3284,6 @@ func (v *InfraDeviceCreateInput) GetId() string { return v.Id }
 
 // GetRole returns InfraDeviceCreateInput.Role, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetRole() TextAttributeCreate { return v.Role }
-
-// GetDescription returns InfraDeviceCreateInput.Description, and is useful for accessing the field via an interface.
-func (v *InfraDeviceCreateInput) GetDescription() TextAttributeCreate { return v.Description }
 
 // GetContract returns InfraDeviceCreateInput.Contract, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetContract() TextAttributeCreate { return v.Contract }
@@ -3296,6 +3293,9 @@ func (v *InfraDeviceCreateInput) GetName() TextAttributeCreate { return v.Name }
 
 // GetStatus returns InfraDeviceCreateInput.Status, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetStatus() TextAttributeCreate { return v.Status }
+
+// GetDescription returns InfraDeviceCreateInput.Description, and is useful for accessing the field via an interface.
+func (v *InfraDeviceCreateInput) GetDescription() TextAttributeCreate { return v.Description }
 
 // GetSubscriber_of_groups returns InfraDeviceCreateInput.Subscriber_of_groups, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetSubscriber_of_groups() []RelatedNodeInput {
@@ -3308,55 +3308,55 @@ func (v *InfraDeviceCreateInput) GetArtifacts() []RelatedNodeInput { return v.Ar
 // GetMember_of_groups returns InfraDeviceCreateInput.Member_of_groups, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetMember_of_groups() []RelatedNodeInput { return v.Member_of_groups }
 
-// GetInterfaces returns InfraDeviceCreateInput.Interfaces, and is useful for accessing the field via an interface.
-func (v *InfraDeviceCreateInput) GetInterfaces() []RelatedNodeInput { return v.Interfaces }
+// GetProfiles returns InfraDeviceCreateInput.Profiles, and is useful for accessing the field via an interface.
+func (v *InfraDeviceCreateInput) GetProfiles() []RelatedNodeInput { return v.Profiles }
 
-// GetPlatform returns InfraDeviceCreateInput.Platform, and is useful for accessing the field via an interface.
-func (v *InfraDeviceCreateInput) GetPlatform() RelatedNodeInput { return v.Platform }
+// GetAsn returns InfraDeviceCreateInput.Asn, and is useful for accessing the field via an interface.
+func (v *InfraDeviceCreateInput) GetAsn() RelatedNodeInput { return v.Asn }
+
+// GetLocation returns InfraDeviceCreateInput.Location, and is useful for accessing the field via an interface.
+func (v *InfraDeviceCreateInput) GetLocation() RelatedNodeInput { return v.Location }
 
 // GetPrimary_address returns InfraDeviceCreateInput.Primary_address, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetPrimary_address() RelatedIPAddressNodeInput {
 	return v.Primary_address
 }
 
-// GetAsn returns InfraDeviceCreateInput.Asn, and is useful for accessing the field via an interface.
-func (v *InfraDeviceCreateInput) GetAsn() RelatedNodeInput { return v.Asn }
-
-// GetProfiles returns InfraDeviceCreateInput.Profiles, and is useful for accessing the field via an interface.
-func (v *InfraDeviceCreateInput) GetProfiles() []RelatedNodeInput { return v.Profiles }
-
-// GetTopology returns InfraDeviceCreateInput.Topology, and is useful for accessing the field via an interface.
-func (v *InfraDeviceCreateInput) GetTopology() RelatedNodeInput { return v.Topology }
-
 // GetTags returns InfraDeviceCreateInput.Tags, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetTags() []RelatedNodeInput { return v.Tags }
 
-// GetLocation returns InfraDeviceCreateInput.Location, and is useful for accessing the field via an interface.
-func (v *InfraDeviceCreateInput) GetLocation() RelatedNodeInput { return v.Location }
+// GetInterfaces returns InfraDeviceCreateInput.Interfaces, and is useful for accessing the field via an interface.
+func (v *InfraDeviceCreateInput) GetInterfaces() []RelatedNodeInput { return v.Interfaces }
 
 // GetDevice_type returns InfraDeviceCreateInput.Device_type, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetDevice_type() RelatedNodeInput { return v.Device_type }
+
+// GetPlatform returns InfraDeviceCreateInput.Platform, and is useful for accessing the field via an interface.
+func (v *InfraDeviceCreateInput) GetPlatform() RelatedNodeInput { return v.Platform }
+
+// GetTopology returns InfraDeviceCreateInput.Topology, and is useful for accessing the field via an interface.
+func (v *InfraDeviceCreateInput) GetTopology() RelatedNodeInput { return v.Topology }
 
 type InfraDeviceUpsertInput struct {
 	Id                   string                    `json:"id"`
 	Hfid                 []string                  `json:"hfid"`
 	Role                 TextAttributeUpdate       `json:"role"`
-	Description          TextAttributeUpdate       `json:"description"`
 	Contract             TextAttributeUpdate       `json:"contract"`
 	Name                 TextAttributeUpdate       `json:"name"`
 	Status               TextAttributeUpdate       `json:"status"`
+	Description          TextAttributeUpdate       `json:"description"`
 	Subscriber_of_groups []RelatedNodeInput        `json:"subscriber_of_groups"`
 	Artifacts            []RelatedNodeInput        `json:"artifacts"`
 	Member_of_groups     []RelatedNodeInput        `json:"member_of_groups"`
-	Interfaces           []RelatedNodeInput        `json:"interfaces"`
-	Platform             RelatedNodeInput          `json:"platform"`
-	Primary_address      RelatedIPAddressNodeInput `json:"primary_address"`
-	Asn                  RelatedNodeInput          `json:"asn"`
 	Profiles             []RelatedNodeInput        `json:"profiles"`
-	Topology             RelatedNodeInput          `json:"topology"`
-	Tags                 []RelatedNodeInput        `json:"tags"`
+	Asn                  RelatedNodeInput          `json:"asn"`
 	Location             RelatedNodeInput          `json:"location"`
+	Primary_address      RelatedIPAddressNodeInput `json:"primary_address"`
+	Tags                 []RelatedNodeInput        `json:"tags"`
+	Interfaces           []RelatedNodeInput        `json:"interfaces"`
 	Device_type          RelatedNodeInput          `json:"device_type"`
+	Platform             RelatedNodeInput          `json:"platform"`
+	Topology             RelatedNodeInput          `json:"topology"`
 }
 
 // GetId returns InfraDeviceUpsertInput.Id, and is useful for accessing the field via an interface.
@@ -3368,9 +3368,6 @@ func (v *InfraDeviceUpsertInput) GetHfid() []string { return v.Hfid }
 // GetRole returns InfraDeviceUpsertInput.Role, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetRole() TextAttributeUpdate { return v.Role }
 
-// GetDescription returns InfraDeviceUpsertInput.Description, and is useful for accessing the field via an interface.
-func (v *InfraDeviceUpsertInput) GetDescription() TextAttributeUpdate { return v.Description }
-
 // GetContract returns InfraDeviceUpsertInput.Contract, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetContract() TextAttributeUpdate { return v.Contract }
 
@@ -3379,6 +3376,9 @@ func (v *InfraDeviceUpsertInput) GetName() TextAttributeUpdate { return v.Name }
 
 // GetStatus returns InfraDeviceUpsertInput.Status, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetStatus() TextAttributeUpdate { return v.Status }
+
+// GetDescription returns InfraDeviceUpsertInput.Description, and is useful for accessing the field via an interface.
+func (v *InfraDeviceUpsertInput) GetDescription() TextAttributeUpdate { return v.Description }
 
 // GetSubscriber_of_groups returns InfraDeviceUpsertInput.Subscriber_of_groups, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetSubscriber_of_groups() []RelatedNodeInput {
@@ -3391,34 +3391,34 @@ func (v *InfraDeviceUpsertInput) GetArtifacts() []RelatedNodeInput { return v.Ar
 // GetMember_of_groups returns InfraDeviceUpsertInput.Member_of_groups, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetMember_of_groups() []RelatedNodeInput { return v.Member_of_groups }
 
-// GetInterfaces returns InfraDeviceUpsertInput.Interfaces, and is useful for accessing the field via an interface.
-func (v *InfraDeviceUpsertInput) GetInterfaces() []RelatedNodeInput { return v.Interfaces }
+// GetProfiles returns InfraDeviceUpsertInput.Profiles, and is useful for accessing the field via an interface.
+func (v *InfraDeviceUpsertInput) GetProfiles() []RelatedNodeInput { return v.Profiles }
 
-// GetPlatform returns InfraDeviceUpsertInput.Platform, and is useful for accessing the field via an interface.
-func (v *InfraDeviceUpsertInput) GetPlatform() RelatedNodeInput { return v.Platform }
+// GetAsn returns InfraDeviceUpsertInput.Asn, and is useful for accessing the field via an interface.
+func (v *InfraDeviceUpsertInput) GetAsn() RelatedNodeInput { return v.Asn }
+
+// GetLocation returns InfraDeviceUpsertInput.Location, and is useful for accessing the field via an interface.
+func (v *InfraDeviceUpsertInput) GetLocation() RelatedNodeInput { return v.Location }
 
 // GetPrimary_address returns InfraDeviceUpsertInput.Primary_address, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetPrimary_address() RelatedIPAddressNodeInput {
 	return v.Primary_address
 }
 
-// GetAsn returns InfraDeviceUpsertInput.Asn, and is useful for accessing the field via an interface.
-func (v *InfraDeviceUpsertInput) GetAsn() RelatedNodeInput { return v.Asn }
-
-// GetProfiles returns InfraDeviceUpsertInput.Profiles, and is useful for accessing the field via an interface.
-func (v *InfraDeviceUpsertInput) GetProfiles() []RelatedNodeInput { return v.Profiles }
-
-// GetTopology returns InfraDeviceUpsertInput.Topology, and is useful for accessing the field via an interface.
-func (v *InfraDeviceUpsertInput) GetTopology() RelatedNodeInput { return v.Topology }
-
 // GetTags returns InfraDeviceUpsertInput.Tags, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetTags() []RelatedNodeInput { return v.Tags }
 
-// GetLocation returns InfraDeviceUpsertInput.Location, and is useful for accessing the field via an interface.
-func (v *InfraDeviceUpsertInput) GetLocation() RelatedNodeInput { return v.Location }
+// GetInterfaces returns InfraDeviceUpsertInput.Interfaces, and is useful for accessing the field via an interface.
+func (v *InfraDeviceUpsertInput) GetInterfaces() []RelatedNodeInput { return v.Interfaces }
 
 // GetDevice_type returns InfraDeviceUpsertInput.Device_type, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetDevice_type() RelatedNodeInput { return v.Device_type }
+
+// GetPlatform returns InfraDeviceUpsertInput.Platform, and is useful for accessing the field via an interface.
+func (v *InfraDeviceUpsertInput) GetPlatform() RelatedNodeInput { return v.Platform }
+
+// GetTopology returns InfraDeviceUpsertInput.Topology, and is useful for accessing the field via an interface.
+func (v *InfraDeviceUpsertInput) GetTopology() RelatedNodeInput { return v.Topology }
 
 // InterfaceInfraIPAddressPaginatedInfraIPAddress includes the requested fields of the GraphQL type PaginatedInfraIPAddress.
 // The GraphQL type's documentation follows.
