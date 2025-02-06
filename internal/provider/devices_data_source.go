@@ -29,10 +29,11 @@ type devicesDataSource struct {
 	Devices []devicesModel `tfsdk:"devices"`
 }
 type devicesModel struct {
-	Edges_node_id         types.String `tfsdk:"id"`
-	Edges_node_name_value types.String `tfsdk:"name_value"`
-	Edges_node_role_value types.String `tfsdk:"role_value"`
-	Edges_node_role_color types.String `tfsdk:"role_color"`
+	Edges_node_id             types.String `tfsdk:"id"`
+	Edges_node_name_value     types.String `tfsdk:"name_value"`
+	Edges_node_role_value     types.String `tfsdk:"role_value"`
+	Edges_node_role_color     types.String `tfsdk:"role_color"`
+	Edges_node_contract_value types.String `tfsdk:"contract_value"`
 }
 
 func (d *devicesDataSource) Metadata(_ context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
@@ -56,6 +57,9 @@ func (d *devicesDataSource) Schema(ctx context.Context, req datasource.SchemaReq
 							Computed: true,
 						},
 						"role_color": schema.StringAttribute{
+							Computed: true,
+						},
+						"contract_value": schema.StringAttribute{
 							Computed: true,
 						},
 					},
@@ -86,10 +90,11 @@ func (d *devicesDataSource) Read(ctx context.Context, req datasource.ReadRequest
 	var state devicesDataSource
 	for i := range response.InfraDevice.Edges {
 		current := devicesModel{
-			Edges_node_id:         types.StringValue(response.InfraDevice.Edges[i].Node.Id),
-			Edges_node_name_value: types.StringValue(response.InfraDevice.Edges[i].Node.Name.Value),
-			Edges_node_role_value: types.StringValue(response.InfraDevice.Edges[i].Node.Role.Value),
-			Edges_node_role_color: types.StringValue(response.InfraDevice.Edges[i].Node.Role.Color),
+			Edges_node_id:             types.StringValue(response.InfraDevice.Edges[i].Node.Id),
+			Edges_node_name_value:     types.StringValue(response.InfraDevice.Edges[i].Node.Name.Value),
+			Edges_node_role_value:     types.StringValue(response.InfraDevice.Edges[i].Node.Role.Value),
+			Edges_node_role_color:     types.StringValue(response.InfraDevice.Edges[i].Node.Role.Color),
+			Edges_node_contract_value: types.StringValue(response.InfraDevice.Edges[i].Node.Contract.Value),
 		}
 		state.Devices = append(state.Devices, current)
 	}

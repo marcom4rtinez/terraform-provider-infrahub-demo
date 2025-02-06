@@ -45,6 +45,9 @@ query Devicequery($device_name: String!) {
             description {
             value
             }
+            contract {
+            value
+            }
         }
         }
     }

@@ -22,6 +22,7 @@ description: |-
 ### Read-Only
 
 - `asn_node_asn_id` (String)
+- `contract_value` (String)
 - `description_value` (String)
 - `device_type_node_id` (String)
 - `id` (String) The ID of this resource.

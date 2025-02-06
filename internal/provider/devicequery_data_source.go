@@ -40,6 +40,7 @@ type devicequeryDataSource struct {
 	Edges_node_device_type_node_id     types.String `tfsdk:"device_type_node_id"`
 	Edges_node_asn_node_asn_id         types.String `tfsdk:"asn_node_asn_id"`
 	Edges_node_description_value       types.String `tfsdk:"description_value"`
+	Edges_node_contract_value          types.String `tfsdk:"contract_value"`
 }
 
 func (d *devicequeryDataSource) Metadata(_ context.Context, req datasource.MetadataRequest, resp *datasource.MetadataResponse) {
@@ -91,6 +92,9 @@ func (d *devicequeryDataSource) Schema(ctx context.Context, req datasource.Schem
 			"description_value": schema.StringAttribute{
 				Computed: true,
 			},
+			"contract_value": schema.StringAttribute{
+				Computed: true,
+			},
 		},
 	}
 }
@@ -137,6 +141,7 @@ func (d *devicequeryDataSource) Read(ctx context.Context, req datasource.ReadReq
 		Edges_node_device_type_node_id:     types.StringValue(response.InfraDevice.Edges[0].Node.Device_type.Node.Id),
 		Edges_node_asn_node_asn_id:         types.StringValue(response.InfraDevice.Edges[0].Node.Asn.Node.Asn.Id),
 		Edges_node_description_value:       types.StringValue(response.InfraDevice.Edges[0].Node.Description.Value),
+		Edges_node_contract_value:          types.StringValue(response.InfraDevice.Edges[0].Node.Contract.Value),
 	}
 
 	// Set state

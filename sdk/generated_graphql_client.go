@@ -2657,6 +2657,7 @@ type DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDev
 	Device_type     DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceDevice_typeNestedEdgedInfraDeviceType    `json:"device_type"`
 	Asn             DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceAsnNestedEdgedInfraAutonomousSystem      `json:"asn"`
 	Description     DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceDescriptionTextAttribute                 `json:"description"`
+	Contract        DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute                    `json:"contract"`
 }
 
 // GetId returns DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice.Id, and is useful for accessing the field via an interface.
@@ -2709,6 +2710,11 @@ func (v *DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfr
 	return v.Description
 }
 
+// GetContract returns DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice.Contract, and is useful for accessing the field via an interface.
+func (v *DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice) GetContract() DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute {
+	return v.Contract
+}
+
 // DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceAsnNestedEdgedInfraAutonomousSystem includes the requested fields of the GraphQL type NestedEdgedInfraAutonomousSystem.
 // The GraphQL type's documentation follows.
 //
@@ -2746,6 +2752,19 @@ type DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDev
 // GetId returns DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceAsnNestedEdgedInfraAutonomousSystemNodeInfraAutonomousSystemAsnNumberAttribute.Id, and is useful for accessing the field via an interface.
 func (v *DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceAsnNestedEdgedInfraAutonomousSystemNodeInfraAutonomousSystemAsnNumberAttribute) GetId() string {
 	return v.Id
+}
+
+// DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute includes the requested fields of the GraphQL type TextAttribute.
+// The GraphQL type's documentation follows.
+//
+// Attribute of type Text
+type DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute struct {
+	Value string `json:"value"`
+}
+
+// GetValue returns DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute.Value, and is useful for accessing the field via an interface.
+func (v *DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute) GetValue() string {
+	return v.Value
 }
 
 // DevicequeryInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceDescriptionTextAttribute includes the requested fields of the GraphQL type TextAttribute.
@@ -2959,9 +2978,10 @@ func (v *DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDevice) GetNode() 
 // DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice includes the requested fields of the GraphQL type InfraDevice.
 type DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice struct {
 	// Unique identifier
-	Id   string                                                                                      `json:"id"`
-	Name DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceNameTextAttribute `json:"name"`
-	Role DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceRoleDropdown      `json:"role"`
+	Id       string                                                                                          `json:"id"`
+	Name     DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceNameTextAttribute     `json:"name"`
+	Role     DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceRoleDropdown          `json:"role"`
+	Contract DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute `json:"contract"`
 }
 
 // GetId returns DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice.Id, and is useful for accessing the field via an interface.
@@ -2977,6 +2997,24 @@ func (v *DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDev
 // GetRole returns DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice.Role, and is useful for accessing the field via an interface.
 func (v *DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice) GetRole() DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceRoleDropdown {
 	return v.Role
+}
+
+// GetContract returns DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice.Contract, and is useful for accessing the field via an interface.
+func (v *DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDevice) GetContract() DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute {
+	return v.Contract
+}
+
+// DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute includes the requested fields of the GraphQL type TextAttribute.
+// The GraphQL type's documentation follows.
+//
+// Attribute of type Text
+type DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute struct {
+	Value string `json:"value"`
+}
+
+// GetValue returns DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute.Value, and is useful for accessing the field via an interface.
+func (v *DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceContractTextAttribute) GetValue() string {
+	return v.Value
 }
 
 // DevicesInfraDevicePaginatedInfraDeviceEdgesEdgedInfraDeviceNodeInfraDeviceNameTextAttribute includes the requested fields of the GraphQL type TextAttribute.
@@ -3224,6 +3262,7 @@ type InfraDeviceCreateInput struct {
 	Id                   string                    `json:"id"`
 	Role                 TextAttributeCreate       `json:"role"`
 	Description          TextAttributeCreate       `json:"description"`
+	Contract             TextAttributeCreate       `json:"contract"`
 	Name                 TextAttributeCreate       `json:"name"`
 	Status               TextAttributeCreate       `json:"status"`
 	Subscriber_of_groups []RelatedNodeInput        `json:"subscriber_of_groups"`
@@ -3248,6 +3287,9 @@ func (v *InfraDeviceCreateInput) GetRole() TextAttributeCreate { return v.Role }
 
 // GetDescription returns InfraDeviceCreateInput.Description, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetDescription() TextAttributeCreate { return v.Description }
+
+// GetContract returns InfraDeviceCreateInput.Contract, and is useful for accessing the field via an interface.
+func (v *InfraDeviceCreateInput) GetContract() TextAttributeCreate { return v.Contract }
 
 // GetName returns InfraDeviceCreateInput.Name, and is useful for accessing the field via an interface.
 func (v *InfraDeviceCreateInput) GetName() TextAttributeCreate { return v.Name }
@@ -3300,6 +3342,7 @@ type InfraDeviceUpsertInput struct {
 	Hfid                 []string                  `json:"hfid"`
 	Role                 TextAttributeUpdate       `json:"role"`
 	Description          TextAttributeUpdate       `json:"description"`
+	Contract             TextAttributeUpdate       `json:"contract"`
 	Name                 TextAttributeUpdate       `json:"name"`
 	Status               TextAttributeUpdate       `json:"status"`
 	Subscriber_of_groups []RelatedNodeInput        `json:"subscriber_of_groups"`
@@ -3327,6 +3370,9 @@ func (v *InfraDeviceUpsertInput) GetRole() TextAttributeUpdate { return v.Role }
 
 // GetDescription returns InfraDeviceUpsertInput.Description, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetDescription() TextAttributeUpdate { return v.Description }
+
+// GetContract returns InfraDeviceUpsertInput.Contract, and is useful for accessing the field via an interface.
+func (v *InfraDeviceUpsertInput) GetContract() TextAttributeUpdate { return v.Contract }
 
 // GetName returns InfraDeviceUpsertInput.Name, and is useful for accessing the field via an interface.
 func (v *InfraDeviceUpsertInput) GetName() TextAttributeUpdate { return v.Name }
@@ -4639,6 +4685,9 @@ query Devicequery ($device_name: String!) {
 				description {
 					value
 				}
+				contract {
+					value
+				}
 			}
 		}
 	}
@@ -4684,6 +4733,9 @@ query Devices {
 				role {
 					value
 					color
+				}
+				contract {
+					value
 				}
 			}
 		}

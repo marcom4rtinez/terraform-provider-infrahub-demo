@@ -24,6 +24,7 @@ description: |-
 
 Read-Only:
 
+- `contract_value` (String)
 - `id` (String)
 - `name_value` (String)
 - `role_color` (String)
